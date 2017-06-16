@@ -43,7 +43,9 @@ class PlantWindow(Tk):
     # Execute when submit button is pressed
     def submitListener(self):
         try:
-            self.numPlants = int(self.inputEntry.get())
+            tempNumPlants = int(self.inputEntry.get())
+            if(tempNumPlants >= 0):
+                self.numPlants = tempNumPlants
         except ValueError:
             pass
         self.inputEntry.delete(0, END)
