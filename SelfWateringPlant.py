@@ -82,17 +82,12 @@ class PlantWindow(Tk):
         self.light = self.mcp.read_adc(1)
         self.temp = self.mcp.read_adc(2)
 
-        # TODO: remove debug
-        print(self.moisture)
-        print(self.light)
-        print(self.temp)
-
         # Convert the sensor values
         self.temp = ((3.3*self.temp/1024.0)-.6)*100
         self.light /= 10.24 # To a percentage (i.e. 100 is full)
         self.moisture /= 10.24 # To a percentage (i.e. 100 is full)
 
-        # If the soil moisture id below 50% and there are plants
+        # If the soil moisture is below 50% and there are plants
         if (self.moisture < 50 and self.numPlants > 0):
             # Open the valve
             GPIO.output(self.SOLENOID, GPIO.HIGH)
