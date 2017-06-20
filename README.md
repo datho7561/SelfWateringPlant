@@ -15,5 +15,5 @@ The Adafruit MCP3008 library, available
 
 Built for the Raspberry Pi Model 1B revision 2.
 
-Tested in Python 2.7, but should work in Python 3 if the
-Adafruit library is installed for Python 3.
+Tested and functioning in Python 2.7.
+However, with a slight modification and access to the Python 3 variation of the required Adafruit library, should theoretically work in Python 3.
